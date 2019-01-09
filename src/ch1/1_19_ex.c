@@ -3,17 +3,31 @@
 #define MAXLINE 1000
 
 int getln(char line[], int maxline);
-void copy(char to[], char from[]);
+void reverse(char to[], char from[], int len);
 
 int main() {
     int len = 0;
-    char line[MAXLINE];
+    char line[MAXLINE], reversed[MAXLINE];
 
     while ((len = getln(line, MAXLINE)) > 0) {
         printf("LENGTH: %d\n", len);
-        printf("LINE CONTENTS: %s\n", line);
-   }
+        printf("LINE CONTENTS: %s", line);
+        reverse(reversed, line, len);
+        printf("REVERSED: %s\n", reversed);
+    }
     return 0;
+}
+
+void reverse(char to[], char from[], int len) {
+    int i = len - 2;
+    int j = 0;
+
+    while (i >= 0){
+        to[j] = from[i];
+        --i;
+        ++j;
+    }
+    to[j] = '\0';
 }
 
 int getln(char s[], int lim) {
@@ -28,13 +42,4 @@ int getln(char s[], int lim) {
     }
     s[i] = '\0';
     return i;
-}
-
-void copy(char to[], char from[]) {
-    int i;
-
-    i = 0;
-    while ((to[i] = from[i]) != '\0'){
-        ++i;
-    }
 }
