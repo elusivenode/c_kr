@@ -31,6 +31,7 @@ add_executable(1_16_ex src/ch1/1_16_ex.c)
 add_executable(1_17_ex src/ch1/1_17_ex.c)
 add_executable(1_18_ex src/ch1/1_18_ex.c)
 add_executable(1_19_ex src/ch1/1_19_ex.c)
+add_executable(1_20_ex src/ch1/1_20_ex.c)
 
 
 
